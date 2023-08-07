@@ -1,0 +1,42 @@
+class UserModel{
+  String ?email;
+  String?password;
+  String?phone;
+  String?name;
+  String?uid;
+  String?bio;
+  String?photo;
+  String?photoCover;
+  UserModel({
+    this.email,
+    this.password,
+    this.uid,
+    this.phone,
+    this.name,
+    this.bio,
+    this.photo,
+    this.photoCover,
+  });
+  UserModel.fromJson(Map<String,dynamic>json){
+    email=json['email'];
+    password=json['password'];
+    uid=json['uid'];
+    phone=json['phone'];
+    name=json['name'];
+    bio=json['bio'];
+    photo=json['photo'];
+    photoCover=json['photoCover'];
+  }
+  Map<String, dynamic>toMap(){
+    return{
+      'email':email,
+      'password':password,
+      'uid':uid,
+      'phone':phone,
+      'name':name,
+      'bio':bio,
+      'photo':photo,
+      'photoCover':photoCover,
+    };
+  }
+}
